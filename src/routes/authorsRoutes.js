@@ -2,29 +2,29 @@ const express= require ('express');
 const authorsRouter =express.Router();
 var authors=[
     {
-        title:'name1',
-        author:'author1',
-        genre:'genre1',
-        img:"img1.jpg"
+        title:'Azat Mardan',
+        website:'https://azat.co/',
+        info:'Tech Executive, author of 18 Books, Microsoft MVP, M.Sc., entrepreneur, investor and a paleo enthusiast.',
+        img:"author1.jpg"
     },
     {
-        title:'name2',
-        author:'author2',
-        genre:'genre2',
-        img:"img2.jpg"
+        title:'Khaled Hosseini',
+        website:'https://khaledhosseini.com/',
+        info:'Khaled Hosseini is an American novelist and physician.He is the author of the New York Times bestsellers The Kite Runner, A Thousand Splendid Suns, and And the Mountains Echoed. ',
+        img:"author2.jpg"
     },
     {
-        title:'name3',
-        author:'author3',
-        genre:'genre3',
-        img:"img3.jpg"
+        title:'Malala Yousafzai',
+        website:'https://www.malala.org/',
+        info:'Malala Yousafzai, is a Pakistani activist for female education and the youngest Nobel Prize laureate.',
+        img:"author3.jpg"
     },
 ];
    authorsRouter.get('/',function(req,res){
       res.render("authors",{
         nav:[
             {
-                link:'/index',name:'Home'
+                link:'/',name:'Home'
             },
             {
                 link:'/books',name:'Books'
@@ -38,7 +38,8 @@ var authors=[
         ],
         
          title:'Library Management Website-Authors',
-         heading:'Authors'
+         heading:'Authors',
+         authors
       });
  });
 //  authorsRouter.get('/:id',function(req,res){
@@ -63,4 +64,4 @@ var authors=[
 //          heading:'Author'
 //       });
 //  });
-module.exports=authorRouter;
+module.exports=authorsRouter;
